@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  url-shortener-api:
+    container_name: url-shortener-api
+    image: url-shortener-api-image
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgresql://postgres:docker@postgres:5432/db_url_shortener?schema=public
+    networks:
+      - url-shortener-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: url-shortener-postgres
+    image: postgres:16
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+    networks:
+      - url-shortener-network
+    restart: unless-stopped
+
+networks:
+  url-shortener-network:
+    driver: bridge

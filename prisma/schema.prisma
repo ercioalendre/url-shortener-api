@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @db.Uuid
+  fullName      String    @db.VarChar
+  email         String?   @unique @db.VarChar
+  phone         String?   @unique @db.VarChar
+  role          String    @db.VarChar
+  password      String    @db.VarChar
+  token         String?   @unique @db.VarChar
+  createdAt     DateTime  @db.Timestamp(6)
+  createdBy     String?   @db.Uuid
+  updatedAt     DateTime? @db.Timestamp(6)
+  updatedBy     String?   @db.Uuid
+  softDeletedAt DateTime? @db.Timestamp(6)
+  softDeletedBy String?   @db.Uuid
+
+  userRelatedToCreatedBy           User?  @relation("userRelatedToCreatedByForUser", fields: [createdBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userRelatedToUpdatedBy           User?  @relation("userRelatedToUpdatedByForUser", fields: [updatedBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userRelatedToSoftDeletedBy       User?  @relation("userRelatedToSoftDeletedByForUser", fields: [softDeletedBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userRelatedToCreatedByInUser     User[] @relation("userRelatedToCreatedByForUser")
+  userRelatedToUpdatedByInUser     User[] @relation("userRelatedToUpdatedByForUser")
+  userRelatedToSoftDeletedByInUser User[] @relation("userRelatedToSoftDeletedByForUser")
+  userRelatedToCreatedByInUrl      Url[]  @relation("userRelatedToCreatedByForUrl")
+  userRelatedToUpdatedByInUrl      Url[]  @relation("userRelatedToUpdatedByForUrl")
+  userRelatedToSoftDeletedByInUrl  Url[]  @relation("userRelatedToSoftDeletedByForUrl")
+}
+
+model Url {
+  id            String    @id @db.Uuid
+  originalUrl   String    @db.VarChar
+  shortenedPath String    @unique @db.Char(6)
+  views         Int       @db.Integer
+  createdAt     DateTime  @db.Timestamp(6)
+  createdBy     String?   @db.Uuid
+  updatedAt     DateTime? @db.Timestamp(6)
+  updatedBy     String?   @db.Uuid
+  softDeletedAt DateTime? @db.Timestamp(6)
+  softDeletedBy String?   @db.Uuid
+
+  userRelatedToCreatedBy     User? @relation("userRelatedToCreatedByForUrl", fields: [createdBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userRelatedToUpdatedBy     User? @relation("userRelatedToUpdatedByForUrl", fields: [updatedBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userRelatedToSoftDeletedBy User? @relation("userRelatedToSoftDeletedByForUrl", fields: [softDeletedBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
