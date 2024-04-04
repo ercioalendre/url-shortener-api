@@ -35,12 +35,8 @@ module.exports = {
   testMatch: ["**/?(*.)(spec|test).ts"],
 
   transform: {
-    "^.+\\.tsx?$": [
-      "ts-jest",
-      {
-        tsconfig: "tsconfig.json",
-        isolatedModules: true,
-      },
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
     ],
   },
 };
