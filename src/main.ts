@@ -28,10 +28,10 @@ async function bootstrap() {
         cluster.fork();
       }
 
-      cluster.on('exit', (worker, code) => {
+      cluster.on('exit', (worker, code, signal) => {
         if (code !== 0 && !worker.exitedAfterDisconnect) {
           logger.warn(
-            `Worker with process id ${worker.process.pid} has been disconnected. Creating a new one...`,
+            `Worker with process id ${worker.process.pid} has been disconnected with code ${code} and signal ${signal}. Creating a new one...`,
           );
 
           cluster.fork();
@@ -93,7 +93,7 @@ async function bootstrap() {
       app,
     });
 
-    await app.listen(AppConfig.getOrThrow('PORT') || 3000);
+    await app.listen(AppConfig.get('PORT') || 3000);
   }
 }
 
