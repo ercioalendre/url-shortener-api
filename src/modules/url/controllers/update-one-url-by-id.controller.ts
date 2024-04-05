@@ -12,7 +12,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Request } from 'express';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { Throttle } from '@nestjs/throttler';
 import { UpdateOneUrlByIdService } from '@modules/url/services/update-one-url-by-id.service';
 import { FilesInterceptor } from '@nestjs/platform-express';

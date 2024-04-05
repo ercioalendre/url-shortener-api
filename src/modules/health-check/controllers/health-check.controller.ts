@@ -1,10 +1,10 @@
-import { Public } from '@decorators/public.decorator';
+import { Public } from '@decorators';
 import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 
 @Public()
-@Controller('health-check')
+@Controller('/app/health-check')
 @ApiTags('App')
 export class HealthCheckController extends AppController {
   @Get()

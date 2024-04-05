@@ -8,11 +8,11 @@ import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 import { StaticErrors } from '@static/static-errors';
 import { UserPrismaRepository } from '@modules/user/repositories/user.prisma.repository';
-import { IS_PUBLIC_KEY } from '@decorators/public.decorator';
+import { IS_PUBLIC_KEY } from '@decorators';
 import { Reflector } from '@nestjs/core';
 import { AppCrypto } from '@utilities/app-crypto';
 import { StaticKeys } from '@static/static-keys';
-import { AppConfig } from '@config/AppConfig';
+import { AppConfig } from '@config';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

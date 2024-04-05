@@ -1,14 +1,16 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { StaticErrors } from '@static/static-errors';
+import { StaticErrors } from '@static';
 import { compare } from 'bcrypt';
 import { UserPrismaRepository } from '@modules/user/repositories/user.prisma.repository';
 import { JwtService } from '@nestjs/jwt';
-import { SignInUserInputDto } from './dtos/sign-in-user-input.dto';
-import { AuthUserInputDto } from './dtos/auth-user-input.dto';
-import { AuthUserOutputDto } from './dtos/auth-user-output.dto';
-import { AppCrypto } from '@utilities/app-crypto';
-import { StaticKeys } from '@static/static-keys';
-import { AppConfig } from '@config/AppConfig';
+import {
+  SignInUserInputDto,
+  AuthUserInputDto,
+  AuthUserOutputDto,
+} from '@modules/auth/dtos';
+import { AppCrypto } from '@utilities';
+import { StaticKeys } from '@static';
+import { AppConfig } from '@config';
 
 @Injectable()
 export class AuthService {

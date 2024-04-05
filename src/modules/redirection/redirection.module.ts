@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from '@modules/database/prisma/prisma.service';
+import { PrismaService } from '@modules/database/prisma/services';
 import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { AppCrypto } from '@utilities/app-crypto';
-import { RedirectionController } from '@modules/redirection/controllers/redirection.controller';
-import { RedirectionService } from '@modules/redirection/services/redirection.service';
+import { AppCrypto } from '@utilities';
+import { RedirectionController } from '@modules/redirection/controllers';
+import { RedirectionService } from '@modules/redirection/services';
 
 @Module({
   controllers: [RedirectionController],

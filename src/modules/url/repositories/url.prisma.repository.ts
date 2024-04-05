@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '@modules/database/prisma/prisma.service';
+import { PrismaService } from '@modules/database/prisma/services/prisma.service';
 import { CreateOneUrlModelInputDto } from '@modules/url/dtos/input/create-one-url-model-input.dto';
 import { UpdateOneUrlModelInputDto } from '@modules/url/dtos/input/update-one-url-model-input.dto';
 import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output/delete-one-url-output.dto';

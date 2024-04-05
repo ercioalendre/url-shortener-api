@@ -4,7 +4,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Throttle } from '@nestjs/throttler';
 import { CreateOneUserService } from '@modules/user/services/create-one-user.service';
-import { Public } from '@decorators/public.decorator';
+import { Public } from '@decorators';
 
 @Controller('user')
 @Public()

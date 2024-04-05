@@ -2,7 +2,7 @@ import { Controller, Get, Query, Req, Res } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { GetManyUrlInputDto } from '@modules/url/dtos/input/get-many-url-input.dto';
 import { GetManyUrlService } from '@modules/url/services/get-many-url.service';
 import { Response, Request } from 'express';

@@ -1,4 +1,4 @@
-import { AppConfig } from '@config/AppConfig';
+import { AppConfig } from '@config';
 import { UrlBaseOutputDto } from '@modules/url/dtos/output/url-base-output.dto';
 
 export function addShortenedUrlToUrl(url: UrlBaseOutputDto): UrlBaseOutputDto {

@@ -3,7 +3,7 @@ import { DeleteOneUserOutputDto } from '@modules/user/dtos/output/delete-one-use
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { SoftDeleteOneUserByIdService } from '@modules/user/services/soft-delete-one-user-by-id.service';
 
 @Controller('user')

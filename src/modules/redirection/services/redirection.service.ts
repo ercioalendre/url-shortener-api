@@ -4,7 +4,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { StaticErrors } from '@static/static-errors';
+import { StaticErrors } from '@static';
 import { urlHasProtocol } from '@modules/url/utilities/urlHasProtocol';
 
 @Injectable()

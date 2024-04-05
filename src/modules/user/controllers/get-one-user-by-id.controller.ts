@@ -3,7 +3,7 @@ import { GetOneUserOutputDto } from '@modules/user/dtos/output/get-one-user-outp
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { GetOneUserByIdService } from '@modules/user/services/get-one-user-by-id.service';
 
 @Controller('user')

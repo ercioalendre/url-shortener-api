@@ -4,7 +4,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Throttle } from '@nestjs/throttler';
 import { CreateOneUrlService } from '@modules/url/services/create-one-url.service';
-import { Public } from '@decorators/public.decorator';
+import { Public } from '@decorators';
 
 @Controller('url')
 @Public()

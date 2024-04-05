@@ -4,16 +4,15 @@ import { UserModule } from '@modules/user/user.module';
 import { AuthModule } from '@modules/auth/auth.module';
 import { JwtService } from '@nestjs/jwt';
 import { APP_GUARD } from '@nestjs/core';
-import { AuthGuard } from '@src/guards/auth.guard';
-import { RolesGuard } from '@src/guards/roles.guard';
+import { AuthGuard, RolesGuard } from '@guards';
 import { AppCrypto } from '@utilities/app-crypto';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { DatabaseModule } from '@modules/database/database.module';
 import { UrlModule } from '@modules/url/url.module';
-import { HealthCheckController } from './health-check/health-check.controller';
 import { RedirectionModule } from '@modules/redirection/redirection.module';
 import { GracefulShutdownModule } from 'nestjs-graceful-shutdown';
-import { AppConfig } from '@config/AppConfig';
+import { AppConfig } from '@config';
+import { HealthCheckModule } from '@modules/health-check/health-check.module';
 
 @Module({
   imports: [
@@ -34,6 +33,7 @@ import { AppConfig } from '@config/AppConfig';
     AuthModule,
     UrlModule,
     RedirectionModule,
+    HealthCheckModule,
   ],
   providers: [
     JwtService,
@@ -52,6 +52,6 @@ import { AppConfig } from '@config/AppConfig';
     AppConfig,
     AppCrypto,
   ],
-  controllers: [HealthCheckController],
+  controllers: [],
 })
 export class AppModule {}

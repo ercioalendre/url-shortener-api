@@ -1,14 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
-import { HttpExceptionFilter } from './common/filters/http.exception.filter';
+import { HttpExceptionFilter, PrismaExceptionFilter } from '@common/filters';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import compression = require('compression');
-import { PrismaExceptionFilter } from '@common/filters/prisma.exception.filter';
 import cluster from 'node:cluster';
 import os from 'node:os';
 import { setupGracefulShutdown } from 'nestjs-graceful-shutdown';
-import { AppConfig } from '@config/AppConfig';
+import { AppConfig } from '@config';
 import * as Sentry from '@sentry/node';
 
 const logger = new Logger('Main');

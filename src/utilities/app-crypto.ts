@@ -1,4 +1,4 @@
-import { AppConfig } from '@config/AppConfig';
+import { AppConfig } from '@config';
 import * as crypto from 'node:crypto';
 
 export class AppCrypto {

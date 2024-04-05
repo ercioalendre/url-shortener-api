@@ -3,7 +3,7 @@ import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output/delete-one-url-o
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { HardDeleteOneUrlByIdService } from '@modules/url/services/hard-delete-one-url-by-id.service';
 
 @Controller('url')

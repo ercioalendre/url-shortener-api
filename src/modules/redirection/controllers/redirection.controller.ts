@@ -1,9 +1,9 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 import { Throttle } from '@nestjs/throttler';
-import { Public } from '@decorators/public.decorator';
-import { RedirectionService } from '@modules/redirection/services/redirection.service';
+import { Public } from '@decorators';
+import { RedirectionService } from '@modules/redirection/services';
 import { Response } from 'express';
 
 @Controller('')

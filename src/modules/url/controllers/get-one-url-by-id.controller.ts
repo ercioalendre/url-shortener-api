@@ -3,7 +3,7 @@ import { GetOneUrlOutputDto } from '@modules/url/dtos/output/get-one-url-output.
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
 import { Role } from '@modules/user/constants/role.enum';
-import { Roles } from '@decorators/roles.decorator';
+import { Roles } from '@decorators';
 import { GetOneUrlByIdService } from '@modules/url/services/get-one-url-by-id.service';
 import { addShortenedUrlToUrl } from '@modules/url/utilities/addShortenedUrlToUrl';
 

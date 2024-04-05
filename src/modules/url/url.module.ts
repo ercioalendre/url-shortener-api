@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from '@modules/database/prisma/prisma.service';
+import { PrismaService } from '@modules/database/prisma/services/prisma.service';
 import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
 import { CreateOneUrlController } from '@modules/url/controllers/create-one-url.controller';
 import { GetOneUrlByIdController } from '@modules/url/controllers/get-one-url-by-id.controller';

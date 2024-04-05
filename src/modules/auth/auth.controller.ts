@@ -1,12 +1,14 @@
 import { Body, Controller, Get, HttpCode, Post, Req } from '@nestjs/common';
-import { AuthService } from './auth.service';
+import { AuthService } from '@modules/auth';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
-import { Public } from '@decorators/public.decorator';
+import { AppController } from '@src';
+import { Public } from '@decorators';
 import { Request } from 'express';
-import { SignInUserInputDto } from './dtos/sign-in-user-input.dto';
-import { SignInUserOutputDto } from './dtos/sign-in-user-output.dto';
-import { AuthUserOutputDto } from './dtos/auth-user-output.dto';
+import {
+  SignInUserInputDto,
+  SignInUserOutputDto,
+  AuthUserOutputDto,
+} from '@modules/auth/dtos';
 
 @Controller('auth')
 @ApiTags('Auth')

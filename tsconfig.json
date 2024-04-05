@@ -20,13 +20,21 @@
     "paths": {
       "@common/*": ["./src/common/*"],
       "@config/*": ["./src/config/*"],
+      "@config": ["./src/config"],
       "@decorators/*": ["./src/decorators/*"],
+      "@decorators": ["./src/decorators"],
+      "@guards/*": ["./src/guards/*"],
+      "@guards": ["./src/guards"],
       "@modules/*": ["./src/modules/*"],
+      "@modules": ["./src/modules"],
       "@utilities/*": ["./src/utilities/*"],
+      "@utilities": ["./src/utilities"],
       "@static/*": ["./src/static/*"],
+      "@static": ["./src/static"],
       "@src/*": ["./src/*"],
-      "@tests/*": ["./tests/*"]
-
+      "@src": ["./src"],
+      "@tests/*": ["./tests/*"],
+      "@tests": ["./tests"]
     }
   }
 }

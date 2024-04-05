@@ -4,9 +4,8 @@ import {
   ArgumentsHost,
   HttpException,
 } from '@nestjs/common';
-// import { BaseExceptionFilter } from '@common/filters/base.exception.filter';
 import * as Sentry from '@sentry/node';
-import { MainExceptionFilter } from './main.exception.filter';
+import { MainExceptionFilter } from '@common/filters';
 
 interface AppErrorObject {
   code: string;
