@@ -1,3 +1,3 @@
-import { UrlBaseInputDto } from './url-base-input.dto';
+import { UrlBaseInputDto } from '@modules/url/dtos/input';
 
 export abstract class CreateOneUrlInputDto extends UrlBaseInputDto {}

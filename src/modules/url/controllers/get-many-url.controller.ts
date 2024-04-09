@@ -1,12 +1,12 @@
 import { Controller, Get, Query, Req, Res } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
-import { Role } from '@modules/user/constants/role.enum';
+import { AppController } from '@src';
+import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
-import { GetManyUrlInputDto } from '@modules/url/dtos/input/get-many-url-input.dto';
-import { GetManyUrlService } from '@modules/url/services/get-many-url.service';
+import { GetManyUrlInputDto } from '@modules/url/dtos/input';
+import { GetManyUrlService } from '@modules/url/services';
 import { Response, Request } from 'express';
-import { UrlBaseOutputDto } from '@modules/url/dtos/output/url-base-output.dto';
+import { UrlBaseOutputDto } from '@modules/url/dtos/output';
 
 @Controller('url')
 @Roles(Role.Admin, Role.User)

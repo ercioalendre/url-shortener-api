@@ -1,10 +1,10 @@
 import { Controller, Param, Delete, Req } from '@nestjs/common';
-import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output/delete-one-url-output.dto';
+import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppController } from '@src/app.controller';
-import { Role } from '@modules/user/constants/role.enum';
+import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
-import { SoftDeleteOneUrlByIdService } from '@modules/url/services/soft-delete-one-url-by-id.service';
+import { SoftDeleteOneUrlByIdService } from '@modules/url/services';
 
 @Controller('url')
 @Roles(Role.Admin, Role.User)

@@ -3,11 +3,11 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { GetOneUrlOutputDto } from '@modules/url/dtos/output/get-one-url-output.dto';
-import { StaticErrors } from '@static/static-errors';
+import { UrlPrismaRepository } from '@modules/url/repositories';
+import { GetOneUrlOutputDto } from '@modules/url/dtos/output';
+import { StaticErrors } from '@static';
 import { UserBaseOutputDto } from '@modules/user/dtos/output/user-base-output.dto';
-import { Role } from '@modules/user/constants/role.enum';
+import { Role } from '@modules/user/constants';
 
 @Injectable()
 export class GetOneUrlByIdService {

@@ -3,10 +3,10 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { StaticErrors } from '@static/static-errors';
-import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output/delete-one-url-output.dto';
-import { addShortenedUrlToUrl } from '@modules/url/utilities/addShortenedUrlToUrl';
+import { UrlPrismaRepository } from '@modules/url/repositories';
+import { StaticErrors } from '@static';
+import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output';
+import { addShortenedUrlToUrl } from '@modules/url/utilities';
 import { UserBaseOutputDto } from '@modules/user/dtos/output/user-base-output.dto';
 
 @Injectable()

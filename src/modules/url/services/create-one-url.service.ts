@@ -1,13 +1,14 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
-import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { CreateOneUrlInputDto } from '@modules/url/dtos/input/create-one-url-input.dto';
-import { CreateOneUrlOutputDto } from '@modules/url/dtos/output/create-one-url-output.dto';
+import { UrlPrismaRepository } from '@modules/url/repositories';
+import {
+  CreateOneUrlInputDto,
+  CreateOneUrlModelInputDto,
+} from '@modules/url/dtos/input';
+import { CreateOneUrlOutputDto } from '@modules/url/dtos/output';
 import { UserBaseOutputDto } from '@modules/user/dtos/output/user-base-output.dto';
-import { CreateOneUrlModelInputDto } from '@modules/url/dtos/input/create-one-url-model-input.dto';
-import { StaticErrors } from '@static/static-errors';
-import { urlHasProtocol } from '@modules/url/utilities/urlHasProtocol';
-import { addShortenedUrlToUrl } from '@modules/url/utilities/addShortenedUrlToUrl';
+import { StaticErrors } from '@static';
+import { urlHasProtocol, addShortenedUrlToUrl } from '@modules/url/utilities';
 
 @Injectable()
 export class CreateOneUrlService {

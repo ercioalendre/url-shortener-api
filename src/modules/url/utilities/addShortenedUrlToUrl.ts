@@ -1,5 +1,5 @@
 import { AppConfig } from '@config';
-import { UrlBaseOutputDto } from '@modules/url/dtos/output/url-base-output.dto';
+import { UrlBaseOutputDto } from '@modules/url/dtos/output';
 
 export function addShortenedUrlToUrl(url: UrlBaseOutputDto): UrlBaseOutputDto {
   const clonedUrl = structuredClone(url);

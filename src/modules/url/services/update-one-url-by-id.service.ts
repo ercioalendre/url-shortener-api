@@ -3,13 +3,13 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { UrlPrismaRepository } from '@modules/url/repositories/url.prisma.repository';
-import { StaticErrors } from '@static/static-errors';
-import { UpdateOneUrlInputDto } from '@modules/url/dtos/input/update-one-url-input.dto';
-import { UpdateOneUrlOutputDto } from '@modules/url/dtos/output/update-one-url-output.dto';
+import { UrlPrismaRepository } from '@modules/url/repositories';
+import { StaticErrors } from '@static';
+import { UpdateOneUrlInputDto } from '@modules/url/dtos/input';
+import { UpdateOneUrlOutputDto } from '@modules/url/dtos/output';
 import { UserBaseOutputDto } from '@modules/user/dtos/output/user-base-output.dto';
-import { addShortenedUrlToUrl } from '@modules/url/utilities/addShortenedUrlToUrl';
-import { Role } from '@modules/user/constants/role.enum';
+import { addShortenedUrlToUrl } from '@modules/url/utilities';
+import { Role } from '@modules/user/constants';
 
 @Injectable()
 export class UpdateOneUrlByIdService {

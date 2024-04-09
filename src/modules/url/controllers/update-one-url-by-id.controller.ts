@@ -6,15 +6,15 @@ import {
   Req,
   UseInterceptors,
 } from '@nestjs/common';
-import { UpdateOneUrlInputDto } from '@modules/url/dtos/input/update-one-url-input.dto';
-import { UpdateOneUrlOutputDto } from '@modules/url/dtos/output/update-one-url-output.dto';
+import { UpdateOneUrlInputDto } from '@modules/url/dtos/input';
+import { UpdateOneUrlOutputDto } from '@modules/url/dtos/output';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 import { Request } from 'express';
-import { Role } from '@modules/user/constants/role.enum';
+import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
 import { Throttle } from '@nestjs/throttler';
-import { UpdateOneUrlByIdService } from '@modules/url/services/update-one-url-by-id.service';
+import { UpdateOneUrlByIdService } from '@modules/url/services';
 import { FilesInterceptor } from '@nestjs/platform-express';
 
 @Controller('url')

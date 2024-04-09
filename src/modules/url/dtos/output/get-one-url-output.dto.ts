@@ -1,3 +1,3 @@
-import { UrlModelBaseOutputDto } from './url-model-base-output.dto';
+import { UrlModelBaseOutputDto } from '@modules/url/dtos/output';
 
 export class GetOneUrlOutputDto extends UrlModelBaseOutputDto {}

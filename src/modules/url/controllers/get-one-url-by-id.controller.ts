@@ -1,11 +1,11 @@
 import { Controller, Get, Param, Req } from '@nestjs/common';
-import { GetOneUrlOutputDto } from '@modules/url/dtos/output/get-one-url-output.dto';
+import { GetOneUrlOutputDto } from '@modules/url/dtos/output';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
-import { Role } from '@modules/user/constants/role.enum';
+import { AppController } from '@src';
+import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
-import { GetOneUrlByIdService } from '@modules/url/services/get-one-url-by-id.service';
-import { addShortenedUrlToUrl } from '@modules/url/utilities/addShortenedUrlToUrl';
+import { GetOneUrlByIdService } from '@modules/url/services';
+import { addShortenedUrlToUrl } from '@modules/url/utilities';
 
 @Controller('url')
 @Roles(Role.Admin, Role.User)

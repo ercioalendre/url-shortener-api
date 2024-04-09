@@ -1,15 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '@modules/database/prisma/services/prisma.service';
-import { CreateOneUrlModelInputDto } from '@modules/url/dtos/input/create-one-url-model-input.dto';
-import { UpdateOneUrlModelInputDto } from '@modules/url/dtos/input/update-one-url-model-input.dto';
-import { DeleteOneUrlOutputDto } from '@modules/url/dtos/output/delete-one-url-output.dto';
-import { GetOneUrlOutputDto } from '@modules/url/dtos/output/get-one-url-output.dto';
+import { PrismaService } from '@modules/database/prisma/services';
+import {
+  CreateOneUrlModelInputDto,
+  UpdateOneUrlModelInputDto,
+} from '@modules/url/dtos/input';
+import {
+  DeleteOneUrlOutputDto,
+  GetOneUrlOutputDto,
+  CreateOneUrlModelOutputDto,
+  GetManyUrlOutputDto,
+  UpdateOneUrlModelOutputDto,
+} from '@modules/url/dtos/output';
 import { Prisma } from '@prisma/client';
-import { CreateOneUrlModelOutputDto } from '@modules/url/dtos/output/create-one-url-model-output.dto';
-import { GetManyUrlOutputDto } from '@modules/url/dtos/output/get-many-url-output.dto';
-import { UpdateOneUrlModelOutputDto } from '@modules/url/dtos/output/update-one-url-model-output.dto';
-import { SearchParams } from '@src/types/search-params.type';
-import { UrlSortableFieldList } from '@modules/url/constants/url-sortable-field-list';
+import { SearchParams } from '@src/types';
+import { UrlSortableFieldList } from '@modules/url/constants';
 
 @Injectable()
 export class UrlPrismaRepository {

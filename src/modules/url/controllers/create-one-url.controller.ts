@@ -1,9 +1,9 @@
 import { Controller, Post, Body, Req } from '@nestjs/common';
-import { CreateOneUrlInputDto } from '@modules/url/dtos/input/create-one-url-input.dto';
+import { CreateOneUrlInputDto } from '@modules/url/dtos/input';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 import { Throttle } from '@nestjs/throttler';
-import { CreateOneUrlService } from '@modules/url/services/create-one-url.service';
+import { CreateOneUrlService } from '@modules/url/services';
 import { Public } from '@decorators';
 
 @Controller('url')
