@@ -1,11 +1,4 @@
-import {
-  Controller,
-  Body,
-  Patch,
-  Param,
-  Req,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, Body, Patch, Param, Req } from '@nestjs/common';
 import { UpdateOneUrlInputDto } from '@modules/url/dtos/input';
 import { UpdateOneUrlOutputDto } from '@modules/url/dtos/output';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -15,7 +8,6 @@ import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
 import { Throttle } from '@nestjs/throttler';
 import { UpdateOneUrlByIdService } from '@modules/url/services';
-import { FilesInterceptor } from '@nestjs/platform-express';
 
 @Controller('url')
 @Roles(Role.Admin, Role.User)
@@ -29,7 +21,6 @@ export class UpdateOneUrlByIdController extends AppController {
 
   @Patch('update-one/:id')
   @Throttle({ default: { ttl: 60000, limit: 10 } })
-  @UseInterceptors(FilesInterceptor('urlFileList'))
   @ApiOperation({
     summary: 'Updates one single url by ID.',
   })

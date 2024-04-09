@@ -1,6 +1,6 @@
-import { Role } from '@modules/user/constants/role.enum';
+import { Role } from '@modules/user/constants';
 import { ApiProperty } from '@nestjs/swagger';
-import { generatePassword } from '@utilities/generate-password';
+import { generatePassword } from '@utilities';
 import {
   IsEmail,
   IsEnum,

@@ -1,5 +1,5 @@
 import { Type } from '@nestjs/common';
-import { UserModelBaseInputDto } from './user-model-base-input.dto';
+import { UserModelBaseInputDto } from '@modules/user/dtos/input';
 import { PartialType } from '@nestjs/mapped-types';
 
 export abstract class UpdateOneUserModelInputDto extends PartialType(

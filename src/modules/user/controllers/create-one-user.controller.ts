@@ -1,9 +1,9 @@
 import { Controller, Post, Body, Req } from '@nestjs/common';
-import { CreateOneUserInputDto } from '@modules/user/dtos/input/create-one-user-input.dto';
+import { CreateOneUserInputDto } from '@modules/user/dtos/input';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 import { Throttle } from '@nestjs/throttler';
-import { CreateOneUserService } from '@modules/user/services/create-one-user.service';
+import { CreateOneUserService } from '@modules/user/services';
 import { Public } from '@decorators';
 
 @Controller('user')

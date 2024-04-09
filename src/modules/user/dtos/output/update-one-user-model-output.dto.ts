@@ -1,4 +1,4 @@
-import { UserModelBaseOutputDto } from './user-model-base-output.dto';
+import { UserModelBaseOutputDto } from '@modules/user/dtos/output';
 
 export abstract class UpdateOneUserModelOutputDto extends UserModelBaseOutputDto {
   public readonly token?: string | null;

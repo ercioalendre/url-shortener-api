@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { Type } from '@nestjs/common';
-import { UserBaseInputDto } from './user-base-input.dto';
+import { UserBaseInputDto } from '@modules/user/dtos/input';
 import { IsJWT, IsOptional, IsString } from 'class-validator';
 
 export class UpdateOneUserByIdInputDto extends PartialType(

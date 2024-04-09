@@ -1,21 +1,13 @@
-import {
-  Controller,
-  Body,
-  Patch,
-  Param,
-  Req,
-  UseInterceptors,
-} from '@nestjs/common';
-import { UpdateOneUserByIdInputDto } from '@modules/user/dtos/input/update-one-user-by-id-input.dto';
-import { UpdateOneUserByIdOutputDto } from '@modules/user/dtos/output/update-one-user-by-id-output.dto';
+import { Controller, Body, Patch, Param, Req } from '@nestjs/common';
+import { UpdateOneUserByIdInputDto } from '@modules/user/dtos/input';
+import { UpdateOneUserByIdOutputDto } from '@modules/user/dtos/output';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppController } from '@src/app.controller';
+import { AppController } from '@src';
 import { Request } from 'express';
-import { Role } from '@modules/user/constants/role.enum';
+import { Role } from '@modules/user/constants';
 import { Roles } from '@decorators';
 import { Throttle } from '@nestjs/throttler';
-import { UpdateOneUserByIdService } from '@modules/user/services/update-one-user-by-id.service';
-import { FilesInterceptor } from '@nestjs/platform-express';
+import { UpdateOneUserByIdService } from '@modules/user/services';
 
 @Controller('user')
 @Roles(Role.Admin)
@@ -29,7 +21,6 @@ export class UpdateOneUserByIdController extends AppController {
 
   @Patch('update-one/:id')
   @Throttle({ default: { ttl: 60000, limit: 10 } })
-  @UseInterceptors(FilesInterceptor('userFileList'))
   @ApiOperation({
     summary: 'Updates one single user by ID.',
   })

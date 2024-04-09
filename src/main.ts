@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from '@src';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { HttpExceptionFilter, PrismaExceptionFilter } from '@common/filters';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';

@@ -1,3 +1,3 @@
-import { UserBaseOutputDto } from './user-base-output.dto';
+import { UserBaseOutputDto } from '@modules/user/dtos/output';
 
 export abstract class CreateOneUserOutputDto extends UserBaseOutputDto {}
